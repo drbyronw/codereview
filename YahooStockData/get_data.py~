@@ -24,10 +24,10 @@ key_stats = parser.build_stat_data()
 """
 
 no return statement, key_stats gets changed but isn't used or passed to anything,
-other variables are changed but never touched afterwards 1
+other variables are changed but never touched afterwards
 
 
-Is this block supposed to be commented out?  2
+Is this block supposed to be commented out?
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 """
 

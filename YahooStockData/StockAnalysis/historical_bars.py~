@@ -4,8 +4,6 @@ Inputs:
   datetime
 Outputs:
   ticker_ and bar_ data
-
-There are several major errors in this code that should be fixed immediately. I'm fairly certain this won't even compile.
 """
 
 
