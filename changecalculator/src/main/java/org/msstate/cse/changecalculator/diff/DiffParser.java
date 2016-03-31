@@ -9,6 +9,10 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
+/*DiffParser Summary:  Method getChangedFile receives the content of a file as a string
+and compares it to..
+*/
+
 public class DiffParser {
 	
 	public static List<String> getChangedFiles(String diffContent) {  //AJAY-NOTE: Change return from list<string> set<string>
@@ -28,15 +32,15 @@ public class DiffParser {
 						}
 					}
 				}
-			} catch (IOException e) {
+			} catch (IOException e) {  //bad style to have e for one exception and ex for another
 				e.printStackTrace();
 			} finally {
 				try {
-					if (reader != null)
+					if (reader != null)  //reader is never null, unnecessary "if"
 						reader.close();
-					if (unbufferedReader != null)
+					if (unbufferedReader != null)  //unbufferedReader is never null, unnecessary "if"
 						unbufferedReader.close();
-				} catch (IOException ex) {
+				} catch (IOException ex) {  //bad style to have e for one exception and ex for another
 					ex.printStackTrace();
 				}
 			}

@@ -23,8 +23,8 @@ import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
 public class ChangePronenessManager {
 	private String svnUrl = "";
-	private long startRevNum = -1;
-	private long endRevNum = -1;
+	private long startRevNum = -1;  //why is this revision number different from the revision number in hive.properties?
+	private long endRevNum = -1;    //if we are initializing these values from the properties file they should both be initialized null
 	
 	public ChangePronenessManager(Properties prop) {
 		if(null==prop){
@@ -44,6 +44,7 @@ public class ChangePronenessManager {
 			System.err.println("Invalid start revision nubmer ");
 			return;
 		}
+                //get rid of the comment below
 //		if (endRevNum < 0) {
 //			System.err.println("Invalid end revision nubmer ");
 //			return;
