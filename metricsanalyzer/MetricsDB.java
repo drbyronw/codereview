@@ -25,7 +25,9 @@ public class MetricsDB {
             Class.forName("org.gjt.mm.mysql.Driver");
         } catch (Exception e) {
             System.out.println("ERROR: failed to load MySQL JDBC driver." + e);
+            //bad practice to concatinate in .append statement severity: 2
             error.append("MYSQL Driver Exception:   " + e.toString());
+            //bad practice to call .printStackTrace() severity: 2
             e.printStackTrace();
             return;
         }
@@ -34,7 +36,9 @@ public class MetricsDB {
             
         } catch (SQLException ex) {
             System.out.println("ERROR: Could not establish connection to MySQL Database at URL: "+URL+ "\nEXCEPTION:"+ ex);
+            //bad practice to concatinate in .append statement severity: 2
             error.append("SQL Connection Exception   " + ex.toString());
+            //bad practice to call .printStackTrace() severity: 2
             ex.printStackTrace();
         }
         
