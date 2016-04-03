@@ -4,7 +4,8 @@
  */
 
 package metricsanalyzer;
-
+//Vector is obsolete
+//bad practice severity: 1
 import java.util.Vector;
 import java.sql.*;
 import java.util.StringTokenizer;
@@ -24,6 +25,8 @@ public class DBUpdate {
     
     public void addRevision(String revisionNum) {
         MetricsDB db = new MetricsDB(); 
+        //no need to make a variable for the number 0 severity: 3
+        //bad practice
         int zero = 0;
          add = "INSERT INTO revisiondata VALUES('"+revisionNum+"','"+zero+"','"+zero+"','"+zero+"','"+zero +
                     "','"+zero+"','Revision: "+revisionNum+"','1')";
@@ -38,6 +41,9 @@ public class DBUpdate {
          db.closeConnection(); 
     }
     
+    //the rest of the functions can be reduced down to just one function with the addition of one variable
+    //only one line changes in all the functions severity: 1
+    //style issue/bad practice
     public void setMethodMetrics(Vector metrics) {
         MetricsDB db = new MetricsDB();
         int tokens = 0, counter;
@@ -57,6 +63,7 @@ public class DBUpdate {
                 if (columns[counter].equals("null")) {
                     columns[counter] = "0";
                 }
+                //remove comment severity: 2
                 //System.out.println(columns[counter]);
                 counter++;
                 

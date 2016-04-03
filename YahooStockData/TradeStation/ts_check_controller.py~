@@ -6,7 +6,7 @@ Outputs:
   status_string
   A string depending on check_ticker
 
-I don't see any program-breaking errors, but one change could possibly be made.
+I don't see any program-breaking errors, but some minor fixes need to be made.
 """
 
 from TradeStation.ts_requirements import *

@@ -1,7 +1,41 @@
 import abc
 import os
 
+"""
+What are the inputs? 
+    No inputs are required from the user
+    Class member functions take arguments for a receiver and a filename
 
+How is it processed? 
+    Data is processed using os calls to simulate a command line interface
+
+What are the outputs?
+    Outputs are modified files
+
+Who / What initializes the code?
+    1. __main__ initializes all the commands based on the classes
+    2. An Invoker object accepts the commands as an object
+    3. The Invoker object executes various commands
+
+What are the major functions?
+    execute() and undo() for Command classes
+    Receiver classes execute the commands 
+
+What objects are created / used?
+    LsCommand, LsReceiver, RmCommand, RmReceiver,
+    TouchCommand, TouchReceiver, Invoker
+
+----------------------------------------------------------------------
+
+Defects / issues found (relevance of each defect)
+    Rm - Command does not exist (in __main__ function)
+Types / categories of defects
+    Typographical error
+Overall quality assessment
+    Open
+Provide a quality grade / score (that can be compared to other fragments)
+    A
+"""
 class Command(object):
     """The command interface."""
 
@@ -147,6 +181,7 @@ if __name__ == '__main__':
 
     # Delete created file
     rm_receiver = RmReceiver('test_file')
+    #DEFECT SEVERITY 1: Rm - Command() is not a correct function call
     rm_command = Rm - Command(rm_receiver)
 
     create_file_commands = [ls_command, touch_command, ls_command]

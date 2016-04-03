@@ -7,7 +7,7 @@ Inputs:
 Outputs:
   A GUI
 
-From what I can tell, this code creates a window. I don't see any obvious errors.
+From what I can tell, this code creates a window.
 """
 
 

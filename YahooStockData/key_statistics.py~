@@ -31,12 +31,12 @@ class YahooKeyStatistics(HTMLParser):
         self.data_count = 1
 
     def handle_starttag(self, tag, attrs):
-        if tag = 'td' and self.reached_valuation_measures is True:#1 should be tag == 't...
+        if tag = 'td' and self.reached_valuation_measures is True:  #should be tag == 't...
             # print("Start tag:", tag)
             tag = ''
             self.valid_data_field = True
             for attr in attrs:
-                if attr = "('class', 'yfnc_tablehead1')":       #1 should be attr == "(...
+                if attr = "('class', 'yfnc_tablehead1')":       #should be attr == "(...
                     print("     attr:", attr)
                 elif attr == "('class', 'yfnc_tabledata1')":
                     print("     attr:", attr)

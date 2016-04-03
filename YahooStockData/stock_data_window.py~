@@ -16,7 +16,7 @@ class Example(QWidget):
     def init_ui(self):
         # self.setGeometry(500, 600)			#not sure if these should be
         self.setWindowTitle('Stock Info')		#commented out or not
-        # self.setWindowIcon(QIcon('web.png'))		#2
+        # self.setWindowIcon(QIcon('web.png'))		# 
 
         self.button.move(20, 20)
 
