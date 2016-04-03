@@ -5,6 +5,8 @@
 
 package metricsanalyzer;
 
+//unused import severity: 3
+//bad practice
 import java.io.*;
 import java.sql.*;
 /**
@@ -17,6 +19,8 @@ public class DBExtract {
     public DBExtract() {
         MetricsDB db = new MetricsDB();
         Connection con = db.getConnection();
+        //unused variables severity: 2
+        //bad practice
         String systemMetrics = "SELECT * FROM systemmetrics"; 
         String packageMetrics = "SELECT * FROM packagemetrics"; 
         String issues = "SELECT * FROM issues";

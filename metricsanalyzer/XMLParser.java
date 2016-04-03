@@ -8,6 +8,8 @@ package metricsanalyzer;
 import javax.xml.parsers.*;
 import org.xml.sax.*;
 import java.io.*;
+//Vector is obsolete
+//bad practice severity: 1
 import java.util.Vector;
 /**
  *
@@ -29,6 +31,8 @@ public class XMLParser {
         try {
             parser = spf.newSAXParser();
             System.out.println("Parser object is: "+ parser);
+        //could be replaced with a multicatch severity: 2
+        //style problem
         }catch(SAXException e){
             e.printStackTrace(System.err);
             System.exit(1);
@@ -43,6 +47,8 @@ public class XMLParser {
         SAXHandler handler = new SAXHandler(revisionNum);
         try {
             parser.parse(file, handler);
+        //could be replaced with a multicatch severity: 2
+        //style problem
         }  catch(IOException e) {
             e.printStackTrace(System.err);
             
@@ -52,6 +58,8 @@ public class XMLParser {
         
         DBUpdate update = new DBUpdate();
         update.addRevision(revisionNum);
+        //need to remove comments severity: 2
+        //bad practice
        // update.setMetrics(handler.geMetricsList());
         //update.setSystemMetrics(handler.getSysMetrics());
         //update.setClassMetrics(handler.getClassMetrics());

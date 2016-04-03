@@ -7,6 +7,8 @@ package metricsanalyzer;
 
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.Attributes;
+//Vector is obsolete
+//bad practice severity: 1
 import java.util.Vector;
 
 /**
@@ -14,6 +16,8 @@ import java.util.Vector;
  * @author Byron
  */
 public class SAXHandler extends DefaultHandler{
+    //Vector is obsolete
+    //bad practice severity: 1
     Vector metricsList = new Vector();
     Vector systemMetrics = new Vector();
     Vector classMetrics = new Vector();
@@ -21,6 +25,8 @@ public class SAXHandler extends DefaultHandler{
     Vector packageMetrics = new Vector();
     String revisionNum = new String();
     int length = 0;
+    //most of the variables are not needed becuase they are only used once severity: 2
+    //bad practice
     String temp1, temp2, metric, metricID, metricName, per, total, max, stddev, avg, values;
     String typeName, typeSource, typePackage, typeValue, typeData;
     String directoryName, packageName, packageValue, packageData;
@@ -30,13 +36,19 @@ public class SAXHandler extends DefaultHandler{
         this.revisionNum = revisionNum;
     }
     
+    //missing @ overide
+    //bad practice severity: 1
     public void startDocument() {
         System.out.println("Start document: ");
     }
+    //missing @ overide
+    //bad practice severity: 1
     public void endDocument()  {
         System.out.println("End document: ");
     }
     
+    //missing @ overide
+    //bad practice severity: 1
     public void startElement(String uri, String localName, String qname, Attributes attr) {
         //System.out.println("Start element: qname: " + qname);
         length = attr.getLength();
@@ -93,19 +105,29 @@ public class SAXHandler extends DefaultHandler{
             }
         }
     }
-    
+
+    //missing @ overide
+    //bad practice severity: 1    
     public void endElement(String uri, String localName, String qname) {
+        //remove comment severity: 2
         //System.out.println("End element: qname: " + qname);
     }
     
+    //missing @ overide
+    //bad practice severity: 1    
     public void characters(char[] ch, int start, int length) {
+        //remove comment severity: 2
         //System.out.println("Characters: " + new String(ch, start, length));
     }
     
+    //missing @ overide
+    //bad practice severity: 1    
     public void ignorableWhitespace(char[] ch, int start, int length) {
         System.out.println("Ignorable whitespace: " + new String(ch, start, length));
     }
     
+    //missing @ overide
+    //bad practice severity: 1    
     public void skippedEntity(String name) {
         System.out.println("WARNING____Skipped Entity: "+name);
     }
