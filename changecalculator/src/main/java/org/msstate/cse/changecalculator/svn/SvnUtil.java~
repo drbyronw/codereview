@@ -1,7 +1,5 @@
 package org.msstate.cse.changecalculator.svn;
 
-//bad practice 3
-//can compound import statements
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
